@@ -1,0 +1,434 @@
+<html lang="en" style="scroll-behavior: smooth;"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagenes/iconoPag.jpeg">
+    <title>Marina Chávez</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&amp;display=swap">
+    <link rel="stylesheet" href="estilos.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</head>
+
+<body dir="ltr" spellcheck="true" style="direction: ltr; min-height: 159px;">
+
+    <script>
+        // Inicializa EmailJS con tu Public Key
+        emailjs.init("6CneYmPBOdpbrJrfC");  // Esta es mi clave, vinculada a mi email, si estas usando/copiando este código, configurá tu EmailJs: obtené tu Public Key y acá reemplaza con tu propia Public Key. Si usas esta misma, los emails me llegan a mi cuenta y no a la tuya.
+    
+        // Manejo del envío del formulario
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("contactForm");
+            if (contactForm) {
+                contactForm.addEventListener("submit", function(event) {
+                    event.preventDefault();  // Evita el comportamiento por defecto del formulario
+    
+                    // Usa EmailJS para enviar el formulario
+                    emailjs.sendForm("service_viyhvm4", "template_f0fly7e", this)
+                        .then(function(response) {
+                            console.log("Mensaje enviado con éxito:", response);
+                            document.getElementById("responseMessage").textContent = "Mensaje enviado con éxito. ¡Gracias por contactarnos!";
+                            contactForm.reset();  // Opcional: Limpiar el formulario después del envío
+                        }, function(error) {
+                            console.log("Error al enviar el mensaje:", error);
+                            document.getElementById("responseMessage").textContent = "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.";
+                        });
+                });
+            }
+    
+            // Manejo del menú hamburguesa
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+    
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    
+    <header>
+        <div class="header">
+            <nav>
+                <button class="menu-toggle" aria-label="Toggle navigation">
+                    <span class="menu-icon"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#mas-sobre-mi">Sobre mí</a></li>
+                    <li><a href="#mis-estudios">Mis estudios</a></li>
+                    <li><a href="#mis-proyectos">Mis proyectos</a></li>
+                    <li><a href="#contacto-formulario">Contacto</a></li>
+                </ul>
+            </nav>
+                <div class="nombre"> Marina Celeste Chávez</div>
+                <div class="container-fluid">
+                    <a href="mailto:marinachavez89@gmail.com" title="Enviar Email">
+                    <img src="imagenes/logoEmail.png" class="loguitos" alt="Email" width="50" height="45"></a>
+                    <a href="https://wa.me/00541132660120" title="Enviar wsapp">
+                    <img src="imagenes/logoWsapp.png" class="loguitos" alt="wsapp" width="50" height="45"></a>
+                    <a href="https://t.me/MarinaCelesteChavez" title="Enviar Telegram">
+                    <img src="imagenes/logoTelegram.png" class="loguitos" alt="Telegram" width="50" height="45"></a>
+                </div>
+        </div>             
+    </header>
+    
+    <section class="uno">
+        <div class="caja-central">
+            <div class="caja-cara">
+                <img class="cara" src="imagenes/imagenPerfil.png" alt="Marina">
+            </div>
+            <div class="caja-presentacion">
+                <div class="sobre-mi">
+                    <h3>Sobre mi</h3>
+                    <p class="presentacion">
+                        Soy desarrolladora full stack con fuerte orientación backend, con más de 3 años de experiencia desarrollando y manteniendo aplicaciones Java.
+
+Soy Técnica Universitaria en Programación por la UTN y me caracterizo por el aprendizaje continuo y la mejora constante de mis habilidades técnicas.
+                    </p>
+                     <!-- Botón "Conocer más" -->
+                    <div class="boton-container">
+                        <a href="#mas-sobre-mi" class="boton">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+    <section id="mas-sobre-mi" class="sobre-mi-seccion">
+        <h2>Conoceme un poco más</h2>    
+        <div class="sobre-mi-contenedor">
+            <div class="texto-sobre-mi">
+                <p>Soy desarrolladora full stack con fuerte orientación backend y más de 3 años de experiencia profesional en desarrollo de software. Además, me desempeño como ayudante de cátedra en Programación I, Arquitectura de Sistemas Operativos y Matemática en la UTN Pacheco.</p>
+				<p>Soy Técnica Universitaria en Programación y actualmente trabajo desarrollando y manteniendo aplicaciones Java para el sector bancario.</p>
+                <p>Mi camino profesional comenzó en el área de Ceremonial y Protocolo, carrera en la que me gradué en la Universidad Nacional de La Matanza. Posteriormente, me formé como puericultora y consultora de porteo, colaborando desde 2017 con el equipo docente de la escuela Crianza en Brazos.</p>
+                <p>Desde el año 2021 me especializo en desarrollo de software, habiéndome formado en Fundamentos de Programación, Full Stack y Java.</p>                
+                <p>Mi experiencia incluye trabajo con C# y .NET Framework, y actualmente continúo profundizando mis conocimientos en el ecosistema Java y arquitecturas backend en el ámbito bancario.</p>
+                
+            </div>
+            <div class="imagen-sobre-mi">
+                <img src="imagenes/imagenPerfil.png" alt="Foto de perfil de Marina">
+            </div>
+        </div>
+        <hr>    
+        <h2>Aptitudes técnicas</h2>       
+        <div class="aptitudes-grilla">
+            <img src="imagenes/csharp.jpg" class="tech" alt="C#">
+            <img src="imagenes/logojava.jpg" class="tech" alt="Java">
+            <img src="imagenes/logoGithubNegro.png" class="tech" alt="GitHub">
+            <img src="imagenes/logoangular.png" class="tech" alt="Angular">
+            <img src="imagenes/logonet.png" class="tech" alt=".NET">
+            <img src="imagenes/mysqllogo.jpg" class="tech" alt="MySQL">
+        </div>
+        <br>
+        <hr>
+        <br>
+        <h2 id="mis-estudios">Mis estudios</h2> 
+        <div class="cursos-realizados">
+            <div class="curso-item">
+                <img src="imagenes/logoUtn.jfif" alt="UTN - TUP/TUSS" class="curso-imagen">
+                <div class="curso-detalle">
+                    <h3>UTN - Tecnicatura Universitaria en Programación</h3>
+                    <a href="https://www.frgp.utn.edu.ar/carreras/tup_tuss" target="_blank">
+                        <img src="imagenes/logoVerMas.png" alt="Ver más" class="icono-ver-mas">
+                    </a>
+                </div>
+            </div>               
+            <div class="curso-item">
+                <img src="imagenes/logoAP.png" alt="Argentina Programa" class="curso-imagen">
+                <div class="curso-detalle">
+                    <h3>Fundamentos de la programación</h3>
+                    <a href="https://www.argentina.gob.ar/sites/default/files/preguntas_frecuentes_-_plan_argentina_programa.pdf" target="_blank">
+                        <img src="imagenes/logoVerMas.png" alt="Ver más" class="icono-ver-mas">
+                    </a>
+                </div>
+            </div>
+            <div class="curso-item">
+                <img src="imagenes/logojava.jpg" alt="Full Stack Developer" class="curso-imagen">
+                <div class="curso-detalle">
+                    <h3>Full Stack Developer</h3>
+                    <a href="https://www.argentina.gob.ar/produccion/plan-argentina-programa/preguntas-frecuentes" target="_blank">
+                        <img src="imagenes/logoVerMas.png" alt="Ver más" class="icono-ver-mas">
+                    </a>
+                </div>
+            </div>
+            <div class="curso-item">
+                <img src="imagenes/csharp.jpg" alt="C# Nivel 1" class="curso-imagen">
+                <div class="curso-detalle">
+                    <h3>Programación Nivel 1 con C#</h3>
+                    <a href="https://drive.google.com/file/d/1O0LQTA7g-f9ZKo7U7alLqfJNK1cTEc71/view?usp=sharing" target="_blank">
+                        <img src="imagenes/logoVerMas.png" alt="Ver más" class="icono-ver-mas">
+                    </a>
+                </div>
+            </div>
+            <div class="curso-item">
+                <img src="imagenes/logonet.png" alt="POO + .NET + SQL" class="curso-imagen">
+                <div class="curso-detalle">
+                    <h3>POO + .NET + SQL</h3>
+                    <a href="https://drive.google.com/file/d/1It68wtz-WqlGzKiWY9vwbI_0GgqfJew9/view?usp=sharing" target="_blank">
+                        <img src="imagenes/logoVerMas.png" alt="Ver más" class="icono-ver-mas">
+                    </a>
+                </div>
+            </div>
+            <div class="curso-item">
+                <img src="imagenes/logoaspNet.jfif" alt="ASP.NET Web con SQL" class="curso-imagen">
+                <div class="curso-detalle">
+                    <h3>ASP.NET Web con SQL</h3>
+                    <a href="https://drive.google.com/file/d/16sTkD0qaHWPNmcjN9LqRN0fUG2PsitXz/view" target="_blank">
+                        <img src="imagenes/logoVerMas.png" alt="Ver más" class="icono-ver-mas">
+                    </a>
+                </div>
+            </div>
+            <div class="curso-item">
+                <img src="imagenes/tableu.jfif" alt="Data Analytics Tableau Inicial" class="curso-imagen">
+                <div class="curso-detalle">
+                    <h3>Data Analytics Tableau Inicial</h3>
+                    <a href="https://public.tableau.com/app/profile/marina.celeste.chavez/viz/TrabajoenprocesoDashboard/Dashboard1" target="_blank">
+                        <img src="imagenes/logoVerMas.png" alt="Ver más" class="icono-ver-mas">
+                    </a>
+                </div>
+            </div>           
+        </div>
+    </section>
+
+    <h2 id="mis-proyectos" class="mis-proyectos-titulo">Mis Proyectos</h2>
+
+    <section class="tres">
+    <br>
+        <h5>Proyecto Winforms</h5>
+            <h6>Aplicación de escritorio. Gestión de Articulos en Programación III y Curso C# Nivel 2</h6>
+            <p>Programación Orientada a Objetos + SQL + .NET Framework</p> 
+        <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img src="imagenes/Winforms1.jpg" class="img-fluid" alt="Winforms">               
+              </div>              
+              <div class="carousel-item" data-bs-interval="2000">
+                <img src="imagenes/Winforms2.jpg" class="img-fluid" alt="Winforms">
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Winforms3.jpg" class="img-fluid" alt="Winforms">
+              </div>
+              <div class="carousel-item">
+                <img src="imagenes/Winforms4.jpg" class="img-fluid" alt="Winforms">                
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>      
+    </section>
+    
+    <section class="tres">
+        <br>
+            <h5>Proyecto ASP.NET</h5>
+                <h6>Aplicación WEB. Gestión de Articulos en Programación III y Curso C# Nivel 3</h6>
+                <p>Programación Orientada a Objetos + SQL + ASP.NET</p> 
+            <div id="carouselExampleDark2" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000">
+                    <img src="imagenes/ASPNET1.jpg" class="img-fluid" alt="ASP.NET">               
+                  </div>              
+                  <div class="carousel-item" data-bs-interval="2000">
+                    <img src="imagenes/ASPNET2.jpg" class="img-fluid" alt="ASP.NET">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imagenes/ASPNET3.jpg" class="img-fluid" alt="ASP.NET">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imagenes/ASPNET4.jpg" class="img-fluid" alt="ASP.NET">                
+                  </div>
+                  <div class="carousel-item">
+                    <img src="imagenes/ASPNET5.jpg" class="img-fluid" alt="ASP.NET">                
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+	
+<section class="tres">
+        <br>
+            <h5>Proyecto Java</h5>
+                <h6>Aplicación WEB. Gestión Bancaria en Programación IV</h6>
+                <p>Programación Orientada a Objetos + SQL + JAVA</p> 
+            <div id="carouselExampleDark3" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="4" aria-label="Slide 5"></button>
+				  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="7" aria-label="Slide 8"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="8" aria-label="Slide 9"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="9" aria-label="Slide 10"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="10" aria-label="Slide 11"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="11" aria-label="Slide 12"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="12" aria-label="Slide 13"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="13" aria-label="Slide 14"></button>
+				  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="14" aria-label="Slide 15"></button>
+                  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="15" aria-label="Slide 16"></button>
+				  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="16" aria-label="Slide 17"></button>
+				  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="17" aria-label="Slide 18"></button>
+				  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="18" aria-label="Slide 19"></button>
+				  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="19" aria-label="Slide 20"></button>
+				  <button type="button" data-bs-target="#carouselExampleDark3" data-bs-slide-to="20" aria-label="Slide 21"></button>
+				</div>
+                <div class="carousel-inner">
+					<div class="carousel-item active" data-bs-interval="10000">
+						<img src="imagenes/JAVA1.jpeg" class="img-fluid" alt="JAVA">               
+					</div>              
+					<div class="carousel-item" data-bs-interval="2000">
+						<img src="imagenes/JAVA2.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+						<img src="imagenes/JAVA3.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+						<img src="imagenes/JAVA4.jpeg" class="img-fluid" alt="JAVA">                
+					</div>
+					<div class="carousel-item">
+						<img src="imagenes/JAVA5.jpeg" class="img-fluid" alt="JAVA">                
+					</div>
+					<div class="carousel-item">
+						<img src="imagenes/JAVA6.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA7.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA8.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA9.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA10.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA11.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA12.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA13.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA14.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA15.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA16.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA17.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA18.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA19.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA20.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+					<div class="carousel-item">
+					  <img src="imagenes/JAVA21.jpeg" class="img-fluid" alt="JAVA">
+					</div>
+				</div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark3" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </section>
+	
+	    <!-- Video destacado -->
+        <section id="video-presentacion" class="py-5">
+        <div class="container text-center">
+        <h2 class="mb-4">Proyecto ASP.NET</h2>
+		<h6>Aplicación WEB. Gestión de Gastos, reportes, grupo social, gestión admin en Programación III</h6>
+        <p>Programación Orientada a Objetos + SQL + ASP.NET + GitHub</p> 
+            <div class="ratio ratio-16x9">
+            <video controls="">
+                  <source src="videos/video_gestion_gastos.mp4" type="video/mp4">
+                  Tu navegador no soporta el video.
+            </video>
+            </div>
+        </div>
+       </section>
+    
+        <!-- Formulario de Contacto -->
+        <section id="contacto-formulario">
+            <div class="contact-form">
+                <h2>Contacto</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" name="name" placeholder="Nombre" required="">
+                    <input type="email" id="email" name="email" placeholder="Email" required="">
+                    <input type="text" id="subject" name="subject" placeholder="Asunto" required="">
+                    <textarea id="message" name="message" placeholder="Mensaje" rows="5" required=""></textarea>
+                    <button type="submit">Enviar</button>
+                    <p id="responseMessage"></p>
+                </form>
+            </div>        
+        </section>    
+
+    <footer>
+        
+        <h2>Marina Celeste Chávez</h2>
+            <div class="contacto">
+                <a href="https://www.linkedin.com/in/marina-celeste-chavez-198940202/" target="Perfil Linkedin" title="Perfil Linkedin">
+                    <img src="imagenes/logoLinkedinNegro.png" class="red-social" alt="Perfil Linkedin">
+                </a>
+                <hr>
+                <a href="https://github.com/marinacchavez89" target="_blank" title="Perfil GitHub">
+                    <img src="imagenes/logoGithub.png" class="red-social logo-git" alt="Perfil GitHub">
+                </a>
+                <hr>
+                <a href="mailto:marinachavez89@gmail.com" target="_blank" title="Perfil Instagram">
+                    <img src="imagenes/logoEmail.png" class="red-social" alt="">
+                </a>               
+            </div>
+    </footer>
+
+</body></html>
